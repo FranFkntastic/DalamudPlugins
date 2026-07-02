@@ -34,5 +34,38 @@
                           "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image2.png",
                           "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image3.png"
                       ]
+    },
+    {
+        "Author":  "FranFkntastic",
+        "Name":  "MarketMafioso",
+        "InternalName":  "MarketMafioso",
+        "AssemblyVersion":  "1.1.2.1",
+        "TestingAssemblyVersion":  null,
+        "Description":  "A practical FFXIV utility plugin for Workshop Logistics and optional receiver-backed inventory history.",
+        "ApplicableVersion":  "any",
+        "RepoUrl":  "https://github.com/FranFkntastic/MarketMafioso",
+        "DalamudApiLevel":  15,
+        "Punchline":  "Workshop logistics and self-hosted inventory history.",
+        "Tags":  [
+                     "inventory",
+                     "retainer",
+                     "workshop",
+                     "viwi",
+                     "utility",
+                     "qol",
+                     "export",
+                     "json"
+                 ],
+        "CategoryTags":  [
+                             "utility"
+                         ],
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  0,
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.1.2.1/MarketMafioso.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.1.2.1/MarketMafioso.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.1.2.1/MarketMafioso.zip",
+        "LastUpdate":  "1782942573",
+        "IconUrl":  "https://raw.githubusercontent.com/FranFkntastic/MarketMafioso/main/docs/pluginmaster/assets/icon.png"
     }
 ]

@@ -21,6 +21,7 @@ https://raw.githubusercontent.com/FranFkntastic/DalamudPlugins/main/pluginmaster
 ## Plugins
 
 - `ComplicatedMarketBoard`
+- `MarketMafioso`
 
 ## Maintainer Notes
 
