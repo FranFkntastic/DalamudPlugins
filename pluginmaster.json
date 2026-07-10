@@ -1,42 +1,6 @@
 [
     {
         "Author":  "FranFkntastic",
-        "Name":  "ComplicatedMarketBoard",
-        "InternalName":  "ComplicatedMarketBoard",
-        "AssemblyVersion":  "1.13.0.0",
-        "TestingAssemblyVersion":  null,
-        "Description":  "A niche plugin designed to be user-friendly and multi-functional with rich customisation options, for power users.\n\nHighlights:\n  - Compact UI and user theme\n  - Customisable search options\n  - Rich ways for plugin interaction\n\nCheck out the \u0027Introduction\u0027 on Config Window for documentation.\n",
-        "ApplicableVersion":  "any",
-        "RepoUrl":  "https://github.com/FranFkntastic/ComplicatedMarketBoard",
-        "DalamudApiLevel":  15,
-        "Punchline":  "A less simple market board plugin for power users.",
-        "Tags":  [
-                     "Marketboard",
-                     "Price",
-                     "Data",
-                     "Universalis",
-                     "FranFkntastic"
-                 ],
-        "CategoryTags":  [
-                             "Utility",
-                             "Other"
-                         ],
-        "IsHide":  false,
-        "IsTestingExclusive":  false,
-        "DownloadCount":  0,
-        "DownloadLinkInstall":  "https://github.com/FranFkntastic/ComplicatedMarketBoard/releases/download/v1.13.0.0/latest.zip",
-        "DownloadLinkTesting":  "https://github.com/FranFkntastic/ComplicatedMarketBoard/releases/download/v1.13.0.0/latest.zip",
-        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/ComplicatedMarketBoard/releases/download/v1.13.0.0/latest.zip",
-        "LastUpdate":  "1782165677",
-        "IconUrl":  "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/icon.png",
-        "ImageUrls":  [
-                          "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image1.png",
-                          "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image2.png",
-                          "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image3.png"
-                      ]
-    },
-    {
-        "Author":  "FranFkntastic",
         "Name":  "MarketMafioso",
         "InternalName":  "MarketMafioso",
         "AssemblyVersion":  "1.1.2.1",
@@ -67,5 +31,41 @@
         "DownloadLinkUpdate":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.1.2.1/MarketMafioso.zip",
         "LastUpdate":  "1782942573",
         "IconUrl":  "https://raw.githubusercontent.com/FranFkntastic/MarketMafioso/main/docs/pluginmaster/assets/icon.png"
+    },
+    {
+        "Author":  "FranFkntastic",
+        "Name":  "ComplicatedMarketBoard",
+        "InternalName":  "ComplicatedMarketBoard",
+        "AssemblyVersion":  "1.14.0.0",
+        "TestingAssemblyVersion":  null,
+        "Description":  "A compact market board helper with quick item lookup, sortable tables, configurable market scopes, and clearer Universalis freshness information.\n\nHighlights:\n  - Search from hover, hotkey, clipboard, or item name\n  - Compare prices by world, data center, or region\n  - Sort and resize market tables\n  - View retainer names, buyer names, market freshness, and market velocity when available\n",
+        "ApplicableVersion":  "any",
+        "RepoUrl":  "https://github.com/FranFkntastic/ComplicatedMarketBoard",
+        "DalamudApiLevel":  15,
+        "Punchline":  "A compact Dalamud market board helper for FFXIV.",
+        "Tags":  [
+                     "Marketboard",
+                     "Price",
+                     "Data",
+                     "Universalis",
+                     "FranFkntastic"
+                 ],
+        "CategoryTags":  [
+                             "Utility",
+                             "Other"
+                         ],
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  0,
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/ComplicatedMarketBoard/releases/download/v1.14.0.0/latest.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/ComplicatedMarketBoard/releases/download/v1.14.0.0/latest.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/ComplicatedMarketBoard/releases/download/v1.14.0.0/latest.zip",
+        "LastUpdate":  "1783708412",
+        "IconUrl":  "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/icon.png",
+        "ImageUrls":  [
+                          "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image1.png",
+                          "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image2.png",
+                          "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image3.png"
+                      ]
     }
 ]
