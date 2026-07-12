@@ -3,13 +3,13 @@
         "Author":  "FranFkntastic",
         "Name":  "MarketMafioso",
         "InternalName":  "MarketMafioso",
-        "AssemblyVersion":  "1.1.2.1",
+        "AssemblyVersion":  "1.2.0.0",
         "TestingAssemblyVersion":  null,
-        "Description":  "A practical FFXIV utility plugin for Workshop Logistics and optional receiver-backed inventory history.",
+        "Description":  "FFXIV workshop logistics, reviewed gear cleanup through Squire, and optional receiver-backed inventory history.",
         "ApplicableVersion":  "any",
         "RepoUrl":  "https://github.com/FranFkntastic/MarketMafioso",
         "DalamudApiLevel":  15,
-        "Punchline":  "Workshop logistics and self-hosted inventory history.",
+        "Punchline":  "Workshop logistics, reviewed gear cleanup, and inventory history.",
         "Tags":  [
                      "inventory",
                      "retainer",
@@ -18,7 +18,8 @@
                      "utility",
                      "qol",
                      "export",
-                     "json"
+                     "json",
+                     "gear"
                  ],
         "CategoryTags":  [
                              "utility"
@@ -26,10 +27,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "DownloadLinkInstall":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.1.2.1/MarketMafioso.zip",
-        "DownloadLinkTesting":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.1.2.1/MarketMafioso.zip",
-        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.1.2.1/MarketMafioso.zip",
-        "LastUpdate":  "1782942573",
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.2.0.0/MarketMafioso.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.2.0.0/MarketMafioso.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.2.0.0/MarketMafioso.zip",
+        "LastUpdate":  "1783830481",
         "IconUrl":  "https://raw.githubusercontent.com/FranFkntastic/MarketMafioso/main/docs/pluginmaster/assets/icon.png"
     },
     {
