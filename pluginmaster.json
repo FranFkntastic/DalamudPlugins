@@ -68,5 +68,34 @@
                           "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image2.png",
                           "https://raw.githubusercontent.com/FranFkntastic/ComplicatedMarketBoard/master/images/image3.png"
                       ]
+    },
+    {
+        "Author":  "FranFkntastic",
+        "Name":  "Quartermaster",
+        "InternalName":  "RQ",
+        "AssemblyVersion":  "0.1.0.0",
+        "TestingAssemblyVersion":  null,
+        "Description":  "Retainer Quartermaster (RQ) lets you browse player and retainer stock, track\ntarget quantities, inspect listings, refresh retainer evidence, and run\nexplicitly reviewed retrieval or elemental deposit operations. Use /rq to\nopen Quartermaster.\n",
+        "ApplicableVersion":  "any",
+        "RepoUrl":  "https://github.com/FranFkntastic/Quartermaster",
+        "DalamudApiLevel":  15,
+        "Punchline":  "Owner-scoped retainer stock, target plans, and reviewed transfers.",
+        "Tags":  [
+                     "Inventory",
+                     "Retainer",
+                     "Utility",
+                     "Franthropy"
+                 ],
+        "CategoryTags":  [
+                             "Utility",
+                             "Other"
+                         ],
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  0,
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.1.0.0/latest.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.1.0.0/latest.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.1.0.0/latest.zip",
+        "LastUpdate":  "1784748153"
     }
 ]
