@@ -22,7 +22,12 @@ https://raw.githubusercontent.com/FranFkntastic/DalamudPlugins/main/pluginmaster
 
 - `ComplicatedMarketBoard`
 - `MarketMafioso`
+- `Quartermaster`
+- `DalamudAgentBridge`
 
 ## Maintainer Notes
 
-`pluginmaster.json` is the public Dalamud repository manifest. Plugin release zips are hosted in each plugin's own GitHub releases and should use versioned release URLs.
+`pluginmaster.json` is the public Dalamud repository manifest. Plugin release
+zips are hosted in each plugin's own GitHub releases and must use immutable,
+versioned release URLs. Pull requests validate manifest structure, unique
+internal names, version syntax, and every download URL before merging.
