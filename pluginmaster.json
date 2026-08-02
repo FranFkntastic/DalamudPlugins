@@ -97,5 +97,33 @@
         "DownloadLinkTesting":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.1.0.0/latest.zip",
         "DownloadLinkUpdate":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.1.0.0/latest.zip",
         "LastUpdate":  "1784748153"
+    },
+    {
+        "Author":  "FranFkntastic",
+        "Name":  "Dalamud Agent Bridge",
+        "InternalName":  "DalamudAgentBridge",
+        "AssemblyVersion":  "0.3.1.0",
+        "TestingAssemblyVersion":  null,
+        "Description":  "In-game connector for the loopback-only Dalamud Agent Bridge utility. Use /dab to inspect status and configure optional permissions.",
+        "ApplicableVersion":  "any",
+        "RepoUrl":  "https://github.com/FranFkntastic/DalamudAgentBridge",
+        "DalamudApiLevel":  15,
+        "Punchline":  "Local agent control and inspection connector.",
+        "Tags":  [
+                     "Development",
+                     "Diagnostics",
+                     "Utility",
+                     "Bridge"
+                 ],
+        "CategoryTags":  [
+                             "Utility"
+                         ],
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  0,
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/DalamudAgentBridge/releases/download/v0.3.1/DalamudAgentBridge-plugin.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/DalamudAgentBridge/releases/download/v0.3.1/DalamudAgentBridge-plugin.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/DalamudAgentBridge/releases/download/v0.3.1/DalamudAgentBridge-plugin.zip",
+        "LastUpdate":  "1785691289"
     }
 ]

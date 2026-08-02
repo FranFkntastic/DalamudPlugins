@@ -1,0 +1,48 @@
+name: Validate PluginMaster
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pluginmaster:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate manifest and release assets
+        shell: pwsh
+        run: |
+          $parsed = Get-Content -LiteralPath pluginmaster.json -Raw | ConvertFrom-Json
+          $entries = [Collections.Generic.List[object]]::new()
+          foreach ($entry in $parsed) { $entries.Add($entry) }
+          if ($entries.Count -eq 0) { throw 'PluginMaster contains no entries.' }
+
+          $duplicates = $entries | Group-Object InternalName | Where-Object Count -gt 1
+          if ($duplicates) {
+            throw "Duplicate InternalName values: $($duplicates.Name -join ', ')"
+          }
+
+          foreach ($entry in $entries) {
+            foreach ($field in @('Author', 'Name', 'InternalName', 'AssemblyVersion', 'RepoUrl', 'DownloadLinkInstall')) {
+              if ([string]::IsNullOrWhiteSpace([string]$entry.$field)) {
+                throw "$($entry.InternalName): required field '$field' is empty."
+              }
+            }
+            if ([string]$entry.AssemblyVersion -notmatch '^\d+\.\d+\.\d+\.\d+$') {
+              throw "$($entry.InternalName): AssemblyVersion is not four-part numeric."
+            }
+          }
+
+          $downloadUrls = $entries |
+            ForEach-Object { $_.DownloadLinkInstall; $_.DownloadLinkTesting; $_.DownloadLinkUpdate } |
+            Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } |
+            Sort-Object -Unique
+          foreach ($url in $downloadUrls) {
+            curl.exe --fail --head --location --silent --show-error $url | Out-Null
+            if ($LASTEXITCODE -ne 0) { throw "Download URL is unavailable: $url" }
+          }
