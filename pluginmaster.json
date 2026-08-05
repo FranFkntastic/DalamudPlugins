@@ -125,5 +125,33 @@
         "DownloadLinkTesting":  "https://github.com/FranFkntastic/DalamudAgentBridge/releases/download/v0.3.1/DalamudAgentBridge-plugin.zip",
         "DownloadLinkUpdate":  "https://github.com/FranFkntastic/DalamudAgentBridge/releases/download/v0.3.1/DalamudAgentBridge-plugin.zip",
         "LastUpdate":  "1785691289"
+    },
+    {
+        "Author":  "FranFkntastic",
+        "Name":  "Sapphire Avenue Discord Bridge",
+        "InternalName":  "SapphireAvenueRelay",
+        "AssemblyVersion":  "0.2.0.0",
+        "TestingAssemblyVersion":  null,
+        "Description":  "By FranFkntastic. Connect one FFXIV cross-world linkshell to a community-owned Discord bot with exact CWLS identity checks.",
+        "ApplicableVersion":  "any",
+        "RepoUrl":  "https://github.com/FranFkntastic/SapphireAvenueAssistant",
+        "DalamudApiLevel":  15,
+        "Punchline":  "Bridge one CWLS with your community Discord.",
+        "Tags":  [
+                     "Discord",
+                     "Linkshell",
+                     "Relay",
+                     "Social"
+                 ],
+        "CategoryTags":  [
+                             "Social"
+                         ],
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  0,
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.0.0/SapphireAvenueDiscordBridge.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.0.0/SapphireAvenueDiscordBridge.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.0.0/SapphireAvenueDiscordBridge.zip",
+        "LastUpdate":  "1785896031"
     }
 ]
