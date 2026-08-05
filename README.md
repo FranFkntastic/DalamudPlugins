@@ -24,6 +24,7 @@ https://raw.githubusercontent.com/FranFkntastic/DalamudPlugins/main/pluginmaster
 - `MarketMafioso`
 - `Quartermaster`
 - `DalamudAgentBridge`
+- `SapphireAvenueRelay` — Sapphire Avenue Discord Bridge
 
 ## Maintainer Notes
 
