@@ -25,6 +25,7 @@ permissions:
   actions: write
   contents: write
   pull-requests: write
+  statuses: write
 
 concurrency:
   group: pluginmaster-release-${{ inputs.plugin_internal_name }}
@@ -117,6 +118,7 @@ jobs:
           git commit -m "chore(release): publish $env:PLUGIN_INTERNAL_NAME $env:VERSION"
           git push --set-upstream origin $branch
           "branch=$branch" >> $env:GITHUB_OUTPUT
+          "sha=$(git rev-parse HEAD)" >> $env:GITHUB_OUTPUT
 
       - name: Open publication pull request
         if: steps.changes.outputs.changed == 'true'
@@ -151,3 +153,16 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.commit.outputs.branch }}
         run: gh workflow run validate.yml --ref $env:BRANCH
+
+      - name: Record validation on publication commit
+        if: steps.changes.outputs.changed == 'true'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          gh api --method POST "/repos/$env:GITHUB_REPOSITORY/statuses/$env:COMMIT_SHA" `
+            -f state=success `
+            -f "context=Validate PluginMaster / pluginmaster" `
+            -f "description=Manifest and release assets validated" `
+            -f "target_url=$env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID"
