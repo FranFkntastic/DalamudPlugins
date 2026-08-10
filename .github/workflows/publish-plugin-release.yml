@@ -22,6 +22,7 @@ on:
         type: string
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -142,3 +143,11 @@ jobs:
             --title "Publish $env:PLUGIN_INTERNAL_NAME $env:RELEASE_TAG" `
             --body $body
           "Publication PR: $url" >> $env:GITHUB_STEP_SUMMARY
+
+      - name: Dispatch publication validation
+        if: steps.changes.outputs.changed == 'true'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.commit.outputs.branch }}
+        run: gh workflow run validate.yml --ref $env:BRANCH
