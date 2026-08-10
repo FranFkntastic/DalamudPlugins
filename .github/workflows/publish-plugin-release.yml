@@ -93,6 +93,7 @@ jobs:
             "PluginMaster already points to this release; no pull request was needed." >> $env:GITHUB_STEP_SUMMARY
           } elseif ($diffExitCode -eq 1) {
             "changed=true" >> $env:GITHUB_OUTPUT
+            $global:LASTEXITCODE = 0
           } else {
             throw "Unable to inspect the manifest diff (git exit $diffExitCode)."
           }
