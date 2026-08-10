@@ -1,0 +1,144 @@
+name: Publish Plugin to PluginMaster
+run-name: Publish ${{ inputs.plugin_internal_name }} ${{ inputs.release_tag }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      plugin_internal_name:
+        description: InternalName in pluginmaster.json
+        required: true
+        type: string
+      release_tag:
+        description: Published stable GitHub release tag, such as v1.3.2.0
+        required: true
+        type: string
+      asset_name:
+        description: Exact plugin ZIP asset name, such as MarketMafioso.zip
+        required: true
+        type: string
+      assembly_version:
+        description: Optional four-part manifest version when the tag differs, such as 0.3.1.0
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pluginmaster-release-${{ inputs.plugin_internal_name }}
+  cancel-in-progress: false
+
+jobs:
+  prepare-release:
+    runs-on: windows-latest
+    steps:
+      - name: Require main workflow source
+        shell: pwsh
+        env:
+          WORKFLOW_REF: ${{ github.ref }}
+        run: |
+          if ($env:WORKFLOW_REF -ne 'refs/heads/main') {
+            throw "Run this publication workflow from main, not $env:WORKFLOW_REF."
+          }
+
+      - name: Checkout PluginMaster
+        uses: actions/checkout@v6
+
+      - name: Resolve release and update manifest
+        id: update
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PLUGIN_INTERNAL_NAME: ${{ inputs.plugin_internal_name }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          ASSET_NAME: ${{ inputs.asset_name }}
+          ASSEMBLY_VERSION: ${{ inputs.assembly_version }}
+        run: |
+          $arguments = @{
+            PluginInternalName = $env:PLUGIN_INTERNAL_NAME
+            ReleaseTag = $env:RELEASE_TAG
+            AssetName = $env:ASSET_NAME
+          }
+          if (-not [string]::IsNullOrWhiteSpace($env:ASSEMBLY_VERSION)) {
+            $arguments.AssemblyVersion = $env:ASSEMBLY_VERSION
+          }
+
+          ./tools/Update-PluginMasterRelease.ps1 @arguments
+
+          $version = if ([string]::IsNullOrWhiteSpace($env:ASSEMBLY_VERSION)) {
+            $env:RELEASE_TAG -replace '^v', ''
+          } else {
+            $env:ASSEMBLY_VERSION
+          }
+          "version=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Validate manifest and release assets
+        shell: pwsh
+        run: ./tools/Test-PluginMaster.ps1
+
+      - name: Detect manifest change
+        id: changes
+        shell: pwsh
+        run: |
+          git diff --check
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Manifest update introduced whitespace errors.'
+          }
+
+          git diff --quiet -- pluginmaster.json
+          $diffExitCode = $LASTEXITCODE
+          if ($diffExitCode -eq 0) {
+            "changed=false" >> $env:GITHUB_OUTPUT
+            "PluginMaster already points to this release; no pull request was needed." >> $env:GITHUB_STEP_SUMMARY
+          } elseif ($diffExitCode -eq 1) {
+            "changed=true" >> $env:GITHUB_OUTPUT
+            $global:LASTEXITCODE = 0
+          } else {
+            throw "Unable to inspect the manifest diff (git exit $diffExitCode)."
+          }
+
+      - name: Commit release branch
+        id: commit
+        if: steps.changes.outputs.changed == 'true'
+        shell: pwsh
+        env:
+          PLUGIN_INTERNAL_NAME: ${{ inputs.plugin_internal_name }}
+          VERSION: ${{ steps.update.outputs.version }}
+        run: |
+          $slug = $env:PLUGIN_INTERNAL_NAME.ToLowerInvariant() -replace '[^a-z0-9-]', '-'
+          $branch = "release/pluginmaster-$slug-$($env:VERSION)-${{ github.run_id }}-${{ github.run_attempt }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c $branch
+          git add -- pluginmaster.json
+          git commit -m "chore(release): publish $env:PLUGIN_INTERNAL_NAME $env:VERSION"
+          git push --set-upstream origin $branch
+          "branch=$branch" >> $env:GITHUB_OUTPUT
+
+      - name: Open publication pull request
+        if: steps.changes.outputs.changed == 'true'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PLUGIN_INTERNAL_NAME: ${{ inputs.plugin_internal_name }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          ASSET_NAME: ${{ inputs.asset_name }}
+          BRANCH: ${{ steps.commit.outputs.branch }}
+        run: |
+          $body = @"
+          ## Plugin release
+
+          - Plugin: ``$env:PLUGIN_INTERNAL_NAME``
+          - Release: ``$env:RELEASE_TAG``
+          - Asset: ``$env:ASSET_NAME``
+
+          The workflow verified the published stable GitHub Release, matched the exact asset, updated all PluginMaster download links, and checked every manifest download URL. Merging this pull request publishes the update to custom-repository users.
+          "@
+          $url = gh pr create `
+            --base main `
+            --head $env:BRANCH `
+            --title "Publish $env:PLUGIN_INTERNAL_NAME $env:RELEASE_TAG" `
+            --body $body
+          "Publication PR: $url" >> $env:GITHUB_STEP_SUMMARY
