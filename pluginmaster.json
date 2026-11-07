@@ -94,7 +94,7 @@
         "Author":  "FranFkntastic",
         "Name":  "Sapphire Avenue Discord Bridge",
         "InternalName":  "SapphireAvenueRelay",
-        "AssemblyVersion":  "0.2.0.0",
+        "AssemblyVersion":  "0.2.1.0",
         "TestingAssemblyVersion":  null,
         "Description":  "By FranFkntastic. Connect one FFXIV cross-world linkshell to a community-owned Discord bot with exact CWLS identity checks.",
         "ApplicableVersion":  "any",
@@ -102,21 +102,20 @@
         "DalamudApiLevel":  15,
         "Punchline":  "Bridge one CWLS with your community Discord.",
         "Tags":  [
-                     "Discord",
-                     "Linkshell",
-                     "Relay",
-                     "Social"
+                     "discord",
+                     "linkshell",
+                     "relay"
                  ],
         "CategoryTags":  [
-                             "Social"
+                             "social"
                          ],
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "DownloadLinkInstall":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.0.0/SapphireAvenueDiscordBridge.zip",
-        "DownloadLinkTesting":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.0.0/SapphireAvenueDiscordBridge.zip",
-        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.0.0/SapphireAvenueDiscordBridge.zip",
-        "LastUpdate":  "1785896031"
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.1.0/latest.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.1.0/latest.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.2.1.0/latest.zip",
+        "LastUpdate":  "1794023733"
     },
     {
         "Author":  "FranFkntastic",
