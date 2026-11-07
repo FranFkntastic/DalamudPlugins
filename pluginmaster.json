@@ -37,7 +37,7 @@
         "Author":  "FranFkntastic",
         "Name":  "Quartermaster",
         "InternalName":  "RQ",
-        "AssemblyVersion":  "0.2.0.0",
+        "AssemblyVersion":  "0.2.1.0",
         "TestingAssemblyVersion":  null,
         "Description":  "Retainer Quartermaster (RQ) lets you browse player and retainer stock, track\ntarget quantities, inspect listings, refresh retainer evidence, and run\nexplicitly reviewed retrieval or elemental deposit operations. Use /rq to\nopen Quartermaster.\n",
         "ApplicableVersion":  "any",
@@ -57,10 +57,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "DownloadLinkInstall":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.2.0.0/latest.zip",
-        "DownloadLinkTesting":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.2.0.0/latest.zip",
-        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.2.0.0/latest.zip",
-        "LastUpdate":  "1786746516"
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.2.1.0/latest.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.2.1.0/latest.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/Quartermaster/releases/download/v0.2.1.0/latest.zip",
+        "LastUpdate":  "1794021933"
     },
     {
         "Author":  "FranFkntastic",
