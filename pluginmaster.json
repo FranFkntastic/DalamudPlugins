@@ -3,7 +3,7 @@
         "Author":  "FranFkntastic",
         "Name":  "MarketMafioso",
         "InternalName":  "MarketMafioso",
-        "AssemblyVersion":  "1.5.0.0",
+        "AssemblyVersion":  "1.6.0.0",
         "TestingAssemblyVersion":  null,
         "Description":  "FFXIV workshop logistics, market acquisition, and optional receiver-backed inventory history. Use /mmf to open settings.",
         "ApplicableVersion":  "any",
@@ -27,10 +27,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "DownloadLinkInstall":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.5.0.0/latest.zip",
-        "DownloadLinkTesting":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.5.0.0/latest.zip",
-        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.5.0.0/latest.zip",
-        "LastUpdate":  "1794787630",
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.6.0.0/latest.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.6.0.0/latest.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/MarketMafioso/releases/download/v1.6.0.0/latest.zip",
+        "LastUpdate":  "1794983771",
         "IconUrl":  "https://raw.githubusercontent.com/FranFkntastic/MarketMafioso/main/docs/pluginmaster/assets/icon.png"
     },
     {
