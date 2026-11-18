@@ -94,7 +94,7 @@
         "Author":  "FranFkntastic",
         "Name":  "Sapphire Avenue Discord Bridge",
         "InternalName":  "SapphireAvenueRelay",
-        "AssemblyVersion":  "0.3.0.0",
+        "AssemblyVersion":  "0.4.0.0",
         "TestingAssemblyVersion":  null,
         "Description":  "By FranFkntastic. Connect one FFXIV cross-world linkshell to a community-owned Discord bot with exact CWLS identity checks.",
         "ApplicableVersion":  "any",
@@ -112,10 +112,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "DownloadLinkInstall":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.3.0.0/latest.zip",
-        "DownloadLinkTesting":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.3.0.0/latest.zip",
-        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.3.0.0/latest.zip",
-        "LastUpdate":  "1794787811"
+        "DownloadLinkInstall":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.4.0.0/latest.zip",
+        "DownloadLinkTesting":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.4.0.0/latest.zip",
+        "DownloadLinkUpdate":  "https://github.com/FranFkntastic/SapphireAvenueAssistant/releases/download/v0.4.0.0/latest.zip",
+        "LastUpdate":  "1794983897"
     },
     {
         "Author":  "FranFkntastic",
